@@ -17,7 +17,7 @@ def check_password():
         """Valida la contraseña ingresada."""
         # Hash SHA-256 de la contraseña "pac2025" (puedes cambiarla)
         # Para generar un nuevo hash: hashlib.sha256("tu_contraseña".encode()).hexdigest()
-        correct_password_hash = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"  # "admin"
+        correct_password_hash = "23cbf064de8bff2afa689f9cdba3a829f0d892b9f7e6d1ceea35237586fc0697"  # "admin"
         
         entered_password_hash = hashlib.sha256(st.session_state["password"].encode()).hexdigest()
         

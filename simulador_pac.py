@@ -17,7 +17,7 @@ def check_password():
         """Valida la contraseña ingresada."""
         # Hash SHA-256 de la contraseña "pac2025" (puedes cambiarla)
         # Para generar un nuevo hash: hashlib.sha256("tu_contraseña".encode()).hexdigest()
-        correct_password_hash = "23cbf064de8bff2afa689f9cdba3a829f0d892b9f7e6d1ceea35237586fc0697"  # "admin"
+        correct_password_hash = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"  # "admin"
         
         entered_password_hash = hashlib.sha256(st.session_state["password"].encode()).hexdigest()
         
@@ -74,7 +74,10 @@ st.sidebar.header("⚙️ Configuración del Simulador")
 # Botón de logout en sidebar
 if st.sidebar.button("🚪 Cerrar Sesión"):
     st.session_state["password_correct"] = False
-    st.rerun()
+    try:
+        st.rerun()
+    except AttributeError:
+        st.experimental_rerun()
 
 # ============================================================================
 # SECCIÓN 1: PARÁMETROS DE TIPOLOGÍA DE EMPRESAS
@@ -84,21 +87,21 @@ st.sidebar.subheader("📊 Expedientes por Tipo de Empresa")
 expedientes_pequena = st.sidebar.number_input(
     "Expedientes por empresa pequeña",
     min_value=1,
-    value=10,
+    value=50,
     step=1
 )
 
 expedientes_mediana = st.sidebar.number_input(
     "Expedientes por empresa mediana",
     min_value=1,
-    value=50,
+    value=100,
     step=1
 )
 
 expedientes_grande = st.sidebar.number_input(
     "Expedientes por empresa grande",
     min_value=1,
-    value=100,
+    value=500,
     step=1
 )
 
@@ -125,7 +128,6 @@ pct_solo_base = st.sidebar.slider(
 sesiones_adicionales = st.sidebar.number_input(
     "Sesiones adicionales promedio",
     min_value=0,
-    max_value=3,
     value=2,
     step=1
 )
@@ -133,14 +135,14 @@ sesiones_adicionales = st.sidebar.number_input(
 duracion_sesion_base = st.sidebar.number_input(
     "Duración sesión base (min)",
     min_value=1,
-    value=90,
+    value=120,
     step=5
 )
 
 duracion_sesion_adicional = st.sidebar.number_input(
     "Duración sesión adicional (min)",
     min_value=1,
-    value=90,
+    value=120,
     step=5
 )
 
@@ -205,7 +207,7 @@ pct_pequenas = st.sidebar.slider(
     "% Empresas pequeñas",
     min_value=0,
     max_value=100,
-    value=40,
+    value=50,
     step=5
 )
 
@@ -213,7 +215,7 @@ pct_medianas = st.sidebar.slider(
     "% Empresas medianas",
     min_value=0,
     max_value=100,
-    value=40,
+    value=30,
     step=5
 )
 
@@ -265,7 +267,7 @@ with col1:
     empresas_mes1 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=5,
+        value=3,
         step=1,
         key="total_mes_1"
     )
@@ -276,7 +278,7 @@ with col2:
     empresas_mes2 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=10,
+        value=30,
         step=1,
         key="total_mes_2"
     )
@@ -287,7 +289,7 @@ with col3:
     empresas_mes3 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=20,
+        value=60,
         step=1,
         key="total_mes_3"
     )
@@ -298,7 +300,7 @@ with col4:
     empresas_mes4 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=50,
+        value=150,
         step=1,
         key="total_mes_4"
     )
@@ -309,7 +311,7 @@ with col5:
     empresas_mes5 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=50,
+        value=150,
         step=1,
         key="total_mes_5"
     )

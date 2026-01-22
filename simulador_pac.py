@@ -267,7 +267,7 @@ with col1:
     empresas_mes1 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=3,
+        value=5,
         step=1,
         key="total_mes_1"
     )
@@ -278,7 +278,7 @@ with col2:
     empresas_mes2 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=30,
+        value=31,
         step=1,
         key="total_mes_2"
     )
@@ -289,7 +289,7 @@ with col3:
     empresas_mes3 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=60,
+        value=20,
         step=1,
         key="total_mes_3"
     )
@@ -300,7 +300,7 @@ with col4:
     empresas_mes4 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=150,
+        value=50,
         step=1,
         key="total_mes_4"
     )
@@ -311,7 +311,7 @@ with col5:
     empresas_mes5 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=150,
+        value=50,
         step=1,
         key="total_mes_5"
     )

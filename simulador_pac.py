@@ -87,21 +87,21 @@ st.sidebar.subheader("📊 Expedientes por Tipo de Empresa")
 expedientes_pequena = st.sidebar.number_input(
     "Expedientes por empresa pequeña",
     min_value=1,
-    value=50,
+    value=10,
     step=1
 )
 
 expedientes_mediana = st.sidebar.number_input(
     "Expedientes por empresa mediana",
     min_value=1,
-    value=100,
+    value=50,
     step=1
 )
 
 expedientes_grande = st.sidebar.number_input(
     "Expedientes por empresa grande",
     min_value=1,
-    value=500,
+    value=100,
     step=1
 )
 

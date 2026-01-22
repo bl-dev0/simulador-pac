@@ -278,7 +278,7 @@ with col2:
     empresas_mes2 = st.number_input(
         "Total empresas",
         min_value=0,
-        value=31,
+        value=10,
         step=1,
         key="total_mes_2"
     )
